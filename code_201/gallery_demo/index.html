@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Gallery Demo</title>
+  <style>
+    .gallery {
+      width: 320px;
+      height: 570px;
+      background-color: black;
+      background-image: url('5452_w320.jpg');
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="gallery"></div>
+
+    <script type="text/javascript">
+      var gallery = document.getElementsByClassName('gallery')[0];
+      var colors = ['blue', 'red', 'green'];
+      var pictures = [
+        '5452_w320.jpg',
+        '5453_w320.jpg',
+        '5454_w320.jpg',
+        '5455_w320.jpg'
+      ]
+      var current = 1;
+      var gallerySize = pictures.length;
+
+      gallery.onclick = function() {
+        this.style.backgroundImage = "url("+pictures[current]+")";
+        current = current < gallerySize-1 ? current+1 : 0;
+      }
+    </script>
+  </body>
+</html>
