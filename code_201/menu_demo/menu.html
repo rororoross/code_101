@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Code 101</title>
+	<link rel="stylesheet" href="css/styles.css">
+
+	<style>
+		header {
+			position: absolute;
+			width: 100%;
+			background-color: white;
+
+			-webkit-transition: all 0.4s ease;
+			animation: all 0.4s ease; /* Do we need all or can we specify position and box-shadow */
+		}
+		header.sticky__hidden {
+			position: fixed;
+			top: -89px; /* transform: translateY(-89px)*/
+			box-shadow: none;
+		}
+		header.sticky {
+			position: fixed;
+			top: 0px; /* transform: translateY(0px) */
+			box-shadow: 0px 2px 5px #ccc;
+		}
+	</style>
+
+	<!-- import jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a class="header__link-main" href="#">code</a>
+			<ul>
+				<li><a href="#">intro</a></li>
+				<li><a href="#">learn</a></li>
+				<li><a href="#">teach</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="#">about</a></li>
+			</ul>
+		</nav>
+			<ul class="header__social">
+				<li><a href="#"><img class="icon__social" src="img/icon-twitter.png" alt=""></a></li>
+				<li><a href="#"><img class="icon__social" src="img/icon-github.png" alt=""></a></li>
+				<li><a href="#"><img class="icon__social" src="img/icon-instagram.png" alt=""></a></li>
+			</ul>
+	</header>
+	<div class="hero__image">
+		<h1>I'm learning how to code and it's fun!</h1>
+	</div>
+	<h2>Here's a bit more about how I'm learning how to code and how neat it is. This is kind of an overview of what this page is about. Here's a little more text so we have 3 lines.</h2>
+	<section class="section__personas">
+		<div class="persona__overview">
+			<h3>Bob the Builder</h3>
+			<img class="image__persona" src="img/persona-builder.jpg" alt="">
+			<p>Here's a bunch of text about the persona of bob the builder. He likes to build things. When he's not building things he thinking about what to build next. He's a pretty chill dude and likes to go to Home Depot a lot.</p>
+			<a href="">Read more</a>
+		</div>
+		<div class="persona__overview">
+			<h3>Nancy the Nanny</h3>
+			<img class="image__persona" src="img/persona-nanny.jpg" alt="">
+			<p>Here's a bunch of text about the persona of nancy the nanny. She loves working with kids and making them cookies. She always dreamed of being a nanny. Her biggest role model is Fran Drescher. She likes to teach kids how to have fun.</p>
+			<a href="">Read more</a>
+		</div>
+		<div class="persona__overview">
+			<h3>Sally the Surfer</h3>
+			<img class="image__persona" src="img/persona-surfer.jpg" alt="">
+			<p>Here's a bunch of text about the persona of sally the surfer. Sally once saw a shark and it was really scary. She continues to surf on a daily basis and mainly eats bananas and pineapples. She once did a barrel roll and it was pretty neat.</p>
+			<a href="">Read more</a>
+		</div>
+	</section>
+	<footer>
+		<p>This is some text for the footer. Maybe an email link could go in here?</p>
+		<div>
+			<ul class="footer__social">
+				<li><a href="#"><img src="img/icon-twitter.png" alt=""></a></li>
+				<li><a href="#"><img src="img/icon-github.png" alt=""></a></li>
+				<li><a href="#"><img src="img/icon-instagram.png" alt=""></a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<script>
+	$(window).scroll(function() {
+		var header = $('header');
+		var position = $(this).scrollTop();
+		var state1 = "sticky__hidden";
+		var state2 = "sticky";
+
+		if (position > 88) {
+			header.addClass(state1);
+		} else {
+			header.removeClass(state1);
+		}
+
+		if (position > 480) {
+			header.addClass(state2);
+		} else {
+			header.removeClass(state2);
+		}
+	});
+	</script>
+</body>
+</html>
